@@ -1,0 +1,22 @@
+:root {
+    --header-height: 3rem;
+    --sidebar-width: 8rem;
+}
+
+header {
+    height: var(--header-height);
+    padding: 0.5rem 0;
+    background-color: red;
+}
+
+#sidebar {
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+    background-color: darkblue;
+}
+
+#main-content {
+    width: calc(100% - var(--sidebar-width));
+    height: calc(100vh - var(--header-height));
+    background-color: yellow;
+}
