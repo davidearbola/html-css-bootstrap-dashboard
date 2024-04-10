@@ -18,11 +18,34 @@ header {
 #main-content {
     width: calc(100% - var(--sidebar-width));
     height: calc(100vh - var(--header-height));
-    background-color: yellow;
+    overflow: auto;
 }
 
 .my_h_logo {
     height: 2rem;
+}
+
+.my_icon_square {
+    padding: 0.2rem 0.5rem;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.my_icon_square_tb {
+    padding: 0.2rem;
+    border: 1px solid black;
+}
+
+.my_fs_small {
+    font-size: 0.7rem;
+}
+
+.my_avatar {
+    height: 15px;
+}
+
+.td_wide {
+    width: 60%;
 }
 
 @media all and (min-width: 992px) {
