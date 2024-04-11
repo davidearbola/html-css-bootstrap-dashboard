@@ -1,59 +1,93 @@
 :root {
-    --header-height: 3rem;
-    --sidebar-width: 3rem;
-    --sidebar-lg-width: 8rem;
+	--header-height: 3rem;
+	--sidebar-width: 3rem;
+	--sidebar-lg-width: 8rem;
 }
 
 header {
-    height: var(--header-height);
-    background-color: #F8F9FA;
+	height: var(--header-height);
+	background-color: #f8f9fa;
 }
 
 #sidebar {
-    width: var(--sidebar-width);
-    height: calc(100vh - var(--header-height));
-    background-color: #051E34;
+	width: var(--sidebar-width);
+	height: calc(100vh - var(--header-height));
+	background-color: #051e34;
+	background-image: url(./img/sidebar-bg.png);
 }
 
 #main-content {
-    width: calc(100% - var(--sidebar-width));
-    height: calc(100vh - var(--header-height));
-    overflow: auto;
+	width: calc(100% - var(--sidebar-width));
+	height: calc(100vh - var(--header-height));
+	overflow: auto;
 }
 
 .my_h_logo {
-    height: 2rem;
+	height: 2rem;
+}
+
+.my_bell {
+	color: orange;
 }
 
 .my_icon_square {
-    padding: 0.2rem 0.5rem;
-    border: 1px solid white;
-    border-radius: 3px;
+	padding: 0.2rem 0.5rem;
+	border: 1px solid white;
+	border-radius: 3px;
+}
+
+.my_icon_square:hover {
+	background-color: white;
+	color: grey;
 }
 
 .my_icon_square_tb {
-    padding: 0.2rem;
-    border: 1px solid black;
+	padding: 0.2rem;
+	border: 1px solid grey;
+	color: grey;
 }
 
 .my_fs_small {
-    font-size: 0.7rem;
+	font-size: 0.7rem;
 }
 
 .my_avatar {
-    height: 15px;
+	height: 15px;
 }
 
-.td_wide {
-    width: 60%;
+.form-control:focus {
+	box-shadow: none;
+	border-color: var(--bs-body-color);
+}
+
+#offcanvasRight {
+	width: 100%;
+}
+
+.my_hover:hover {
+	background-color: lightgrey;
+}
+
+@media all and (min-width: 768px) {
+	#offcanvasRight {
+		width: 60%;
+	}
+
+	.td_wide {
+		width: 50%;
+	}
 }
 
 @media all and (min-width: 992px) {
-    #sidebar {
-        width: var(--sidebar-lg-width)
-    }
+	#sidebar {
+		width: var(--sidebar-lg-width);
+	}
 
-    #main-content {
-        width: calc(100% - var(--sidebar-lg-width));
-    }
+	#main-content {
+		width: calc(100% - var(--sidebar-lg-width));
+	}
+
+	#offcanvasRight {
+		width: 50%;
+	}
 }

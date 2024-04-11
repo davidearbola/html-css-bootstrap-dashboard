@@ -1,290 +1,861 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.esm.min.js" integrity="sha512-p6KKvRUjLcXZtvsFd+01s4jcHKu0PNWplQNHeEHmq+27tF5osNRRNkziDu45B5Mo+0+DE/k1qD0ZI29DHEutww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <link rel="stylesheet" href="style.css">
-    <title>Bootstrap 5 Dashboard</title>
-</head>
-<body>
-    <!-- header  -->
-    <header class="py-2">
-        <nav class="container-fluid bg-white">
-            <div class="row align-items-center px-2">
-                <div class="col-1 px-0 text-center">
-                    <img src="./img/logo.svg" class="w-100 d-none d-lg-inline-block">
-                    <img src="./img/mobile-logo.png" class="my_h_logo d-inline-block d-lg-none">
-                </div>
-                <div class="col-10 px-0">
-                    <form class="container-fluid">
-                        <div class="input-group">
-                          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                          <input type="search" class="form-control py-0" placeholder="cerca" aria-label="cerca" aria-describedby="basic-addon1">
-                        </div>
-                    </form>
-                </div>
-                <div class="col-1 px-0">
-                    <ul class="navbar-nav flex-row align-items-center justify-content-center justify-content-lg-between py-0">
-                        <li class="nav-item d-none d-lg-inline">
-                            <i class="fa-solid fa-list"></i>
-                        </li>
-                        <li class="nav-item d-none d-lg-inline">
-                            <i class="fa-solid fa-question"></i>
-                        </li>
-                        <li class="nav-item d-none d-lg-inline">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link py-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-bell" style="color: #FFD43B;"></i>
-                          </a>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"/></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                          </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- main  -->
-    <main class="d-flex">
-        <section id="sidebar" class="position-relative">
-            <img src="./img/sidebar-bg.png" class="position-absolute bottom-50 w-100">
-            <div class="d-flex flex-column px-2 py-3 text-white h-100">
-                <div class="header-sidebar">
-                    <div class="row justify-content-center mx-0 my-2">
-                        <div class="col-12 col-lg-3 text-center text-lg-start px-0">
-                            <i class="fa-solid fa-house"></i>
-                        </div>
-                        <div class="col-5 px-0 d-none d-lg-block">
-                            Home
-                        </div>
-                    </div>
-                    <div class="row justify-content-center mx-0 my-2">
-                        <div class="col-12 col-lg-3 text-center text-lg-start px-0">
-                            <i class="fa-solid fa-chart-simple"></i>
-                        </div>
-                        <div class="col-5 px-0 d-none d-lg-block">
-                            Stats
-                        </div>
-                    </div>
-                    <div class="row justify-content-center mx-0">
-                        <div class="col-12 col-lg-3 text-center text-lg-start px-0">
-                            <i class="fa-solid fa-signal"></i>
-                        </div>
-                        <div class="col-5 px-0 d-none d-lg-block">
-                            Signal
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-sidebar mt-auto">
-                    <div class="row justify-content-center mx-0 my-2">
-                        <div class="col-12 col-lg-3 text-center text-lg-start px-0">
-                            <i class="fa-solid fa-gear"></i>
-                        </div>
-                        <div class="col-5 px-0 d-none d-lg-block">
-                            Admin
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="main-content">
-            <!-- HEADER MAIN CONTENT  -->
-            <div class="container-fluid bg-primary py-3">
-                <div class="row text-white">
-                    <div class="col-12 col-md-4 col-lg-6">
-                        <h3 class="d-inline-block my-0 me-2">Boolean</h3>
-                        <span class="badge rounded-pill text-bg-info align-middle fw-light my_fs_small">Piano Blaze</span><br>
-                        <span class="badge rounded-pill text-bg-info align-middle fw-light my_fs_small">3 App</span>
-                        <i class="fa-solid fa-angles-right my_fs_small"></i>
-                        <span class="badge rounded-pill text-bg-info align-middle fw-light my_fs_small d-none d-lg-inline">Boolean mobile App</span>
-                        <span class="badge rounded-pill text-bg-info align-middle fw-light my_fs_small d-none d-lg-inline">Boolean web App</span>
-                        <span class="badge rounded-pill text-bg-info align-middle fw-light my_fs_small d-none d-lg-inline">Boolean blog App</span>
-                        <span class="badge rounded-pill text-bg-info align-middle fw-light d-inline d-lg-none">+</span>
-                    </div>
-                    <div class="col-12 col-md-4 col-lg-3">
-                        <span class="my_fs_small">Studenti online negli ultimi 30 minuti</span>
-                        <h3 class="mt-2 my-0 my_fs_small">125</h3>
-                    </div>
-                    <div class="col-12 col-md-3 col-lg-3 text-start text-md-end order-first order-md-0">
-                        <span class="me-2 my_fs_small">Nuovo studente</span>
-                        <span class="my_icon_square my_fs_small"><i class="fa-solid fa-plus"></i></span>
-                    </div>
-                </div>
-            </div>
-            <div id="box-card" class="px-1 py-2">
-                <div class="row gx-0">
-                    <div class="col-12 col-lg-8">
-                        <div class="d-flex flex-column">
-                            <div class="card mb-2">
-                                <div class="card-header">
-                                    Prossime classi
-                                </div>
-                                <table class="table my_fs_small">
-                                    <thead>
-                                      <tr>
-                                        <th>Nome</th>
-                                        <th class="text-center d-none d-md-table-cell">Data inizio</th>
-                                        <th class="text-center d-none d-md-table-cell">ROI</th>
-                                        <th class="text-center">Stato</th>
-                                        <th class="text-center">Azioni</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td class="td_wide"><img src="./img/class-avatar.jpg" class="my_avatar"> Classe 75</td>
-                                        <td class="text-center d-none d-md-table-cell">15 Febbraio 2024</td>
-                                        <td class="text-center d-none d-md-table-cell">20%</td>
-                                        <td class="text-center"><span class="badge text-bg-info align-middle fw-light">Done</span>
-                                        </td>
-                                        <td class="text-center"><i class="fa-solid fa-pen me-1 my_icon_square_tb"></i><i class="fa-solid fa-trash my_icon_square_tb"></i></td>
-                                      </tr>
-                                      <tr>
-                                        <td class="td_wide"><img src="./img/class-avatar.jpg" class="my_avatar"> Classe 75</td>
-                                        <td class="text-center d-none d-md-table-cell">15 Febbraio 2024</td>
-                                        <td class="text-center d-none d-md-table-cell">20%</td>
-                                        <td class="text-center"><span class="badge text-bg-info align-middle fw-light">Done</span>
-                                        </td>
-                                        <td class="text-center"><i class="fa-solid fa-pen me-1 my_icon_square_tb"></i><i class="fa-solid fa-trash my_icon_square_tb"></i></td>
-                                      </tr>
-                                      <tr>
-                                        <td class="td_wide"><img src="./img/class-avatar.jpg" class="my_avatar"> Classe 75</td>
-                                        <td class="text-center d-none d-md-table-cell">15 Febbraio 2024</td>
-                                        <td class="text-center d-none d-md-table-cell">20%</td>
-                                        <td class="text-center"><span class="badge text-bg-info align-middle fw-light">Done</span>
-                                        </td>
-                                        <td class="text-center"><i class="fa-solid fa-pen me-1 my_icon_square_tb"></i><i class="fa-solid fa-trash my_icon_square_tb"></i></td>
-                                      </tr>
-                                      <tr>
-                                        <td class="td_wide"><img src="./img/class-avatar.jpg" class="my_avatar"> Classe 75</td>
-                                        <td class="text-center d-none d-md-table-cell">15 Febbraio 2024</td>
-                                        <td class="text-center d-none d-md-table-cell">20%</td>
-                                        <td class="text-center"><span class="badge text-bg-info align-middle fw-light">Done</span>
-                                        </td>
-                                        <td class="text-center"><i class="fa-solid fa-pen me-1 my_icon_square_tb"></i><i class="fa-solid fa-trash my_icon_square_tb"></i></td>
-                                      </tr>
-                                      <tr>
-                                        <td class="td_wide"><img src="./img/class-avatar.jpg" class="my_avatar"> Classe 75</td>
-                                        <td class="text-center d-none d-md-table-cell">15 Febbraio 2024</td>
-                                        <td class="text-center d-none d-md-table-cell">20%</td>
-                                        <td class="text-center"><span class="badge text-bg-info align-middle fw-light">Done</span>
-                                        </td>
-                                        <td class="text-center"><i class="fa-solid fa-pen me-1 my_icon_square_tb"></i><i class="fa-solid fa-trash my_icon_square_tb"></i></td>
-                                      </tr>
-                                      <tr>
-                                        <td class="td_wide"><img src="./img/class-avatar.jpg" class="my_avatar"> Classe 75</td>
-                                        <td class="text-center d-none d-md-table-cell">15 Febbraio 2024</td>
-                                        <td class="text-center d-none d-md-table-cell">20%</td>
-                                        <td class="text-center"><span class="badge text-bg-info align-middle fw-light">Done</span>
-                                        </td>
-                                        <td class="text-center"><i class="fa-solid fa-pen me-1 my_icon_square_tb"></i><i class="fa-solid fa-trash my_icon_square_tb"></i></td>
-                                      </tr>
-                                      <tr>
-                                        <td class="td_wide"><img src="./img/class-avatar.jpg" class="my_avatar"> Classe 75</td>
-                                        <td class="text-center d-none d-md-table-cell">15 Febbraio 2024</td>
-                                        <td class="text-center d-none d-md-table-cell">20%</td>
-                                        <td class="text-center"><span class="badge text-bg-info align-middle fw-light">Done</span>
-                                        </td>
-                                        <td class="text-center"><i class="fa-solid fa-pen me-1 my_icon_square_tb"></i><i class="fa-solid fa-trash my_icon_square_tb"></i></td>
-                                      </tr>
-                                      <tr>
-                                        <td class="td_wide"><img src="./img/class-avatar.jpg" class="my_avatar"> Classe 75</td>
-                                        <td class="text-center d-none d-md-table-cell">15 Febbraio 2024</td>
-                                        <td class="text-center d-none d-md-table-cell">20%</td>
-                                        <td class="text-center"><span class="badge text-bg-info align-middle fw-light">Done</span>
-                                        </td>
-                                        <td class="text-center"><i class="fa-solid fa-pen me-1 my_icon_square_tb"></i><i class="fa-solid fa-trash my_icon_square_tb"></i></td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                            </div>
-                            <div class="card mb-2">
-                                <div class="card-header">
-                                    F.A.Q.
-                                </div> 
-                                <div class="accordion accordion-flush" id="accordionFlushExample">
-                                    <div class="accordion-item my_fs_small">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed my_fs_small" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                          Accordion Item #1
-                                        </button>
-                                      </h2>
-                                      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                                      </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed my_fs_small" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                          Accordion Item #2
-                                        </button>
-                                      </h2>
-                                      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                                      </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed my_fs_small" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                          Accordion Item #3
-                                        </button>
-                                      </h2>
-                                      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                                      </div>
-                                    </div>
-                                </div>                                 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4">
-                        <div class="d-flex flex-column ps-lg-2">
-                            <div class="card mb-2">
-                                <div class="card-header">
-                                    Todo
-                                </div>
-                                <ul class="list-group my_fs_small">
-                                    <li class="list-group-item">
-                                      <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-                                      <label class="form-check-label" for="firstCheckbox">First checkbox</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                      <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-                                      <label class="form-check-label" for="secondCheckbox">Second checkbox</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                      <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                      <label class="form-check-label" for="thirdCheckbox">Third checkbox</label>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card p-2">
-                                <div class="card">
-                                    <img src="./img/stats.jpeg" class="card-img-top">
-                                    <div class="card-body">
-                                        <ul class="list-group list-group-flush my_fs_small">
-                                            <li class="list-group-item">An item</li>
-                                            <li class="list-group-item">A second item</li>
-                                            <li class="list-group-item">A third item</li>
-                                            <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+			integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+			integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+			integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"></script>
+		<link rel="stylesheet" href="style.css" />
+		<title>Bootstrap 5 Dashboard</title>
+	</head>
+	<body>
+		<!-- header  -->
+		<header class="py-2">
+			<nav class="container-fluid bg-white">
+				<div class="row align-items-center px-2">
+					<div class="col-1 px-0 text-center">
+						<img
+							src="./img/logo.svg"
+							class="w-100 d-none d-lg-inline-block" />
+						<img
+							src="./img/mobile-logo.png"
+							class="my_h_logo d-inline-block d-lg-none" />
+					</div>
+					<div class="col-10 px-0">
+						<form class="container-fluid">
+							<div class="input-group">
+								<span class="input-group-text" id="basic-addon1"
+									><i class="fa-solid fa-magnifying-glass"></i
+								></span>
+								<input
+									type="search"
+									class="form-control py-0"
+									placeholder="cerca"
+									aria-label="cerca"
+									aria-describedby="basic-addon1" />
+							</div>
+						</form>
+					</div>
+					<div class="col-1 px-0">
+						<ul
+							class="navbar-nav flex-row align-items-center justify-content-center justify-content-lg-between py-0">
+							<li class="nav-item d-none d-lg-inline">
+								<i class="fa-solid fa-list"></i>
+							</li>
+							<li class="nav-item d-none d-lg-inline">
+								<i class="fa-solid fa-question"></i>
+							</li>
+							<li class="nav-item d-none d-lg-inline">
+								<i class="fa-solid fa-ellipsis-vertical"></i>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link py-0"
+									href="#"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false">
+									<i class="fa-solid fa-bell my_bell"></i>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" href="#"
+											>Profilo</a
+										>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Fatturazione</a
+										>
+									</li>
+									<li><hr class="dropdown-divider" /></li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Logout</a
+										>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!-- main  -->
+		<main class="d-flex">
+			<!-- SIDEBAR  -->
+			<section id="sidebar" class="position-relative">
+				<div class="d-flex flex-column px-2 py-3 text-white h-100">
+					<div class="header-sidebar">
+						<div
+							class="row justify-content-center mx-0 my-2 my_hover">
+							<div
+								class="col-12 col-lg-3 text-center text-lg-start px-0">
+								<i class="fa-solid fa-house"></i>
+							</div>
+							<div class="col-5 px-0 d-none d-lg-block">Home</div>
+						</div>
+						<div
+							class="row justify-content-center mx-0 my-2 my_hover">
+							<div
+								class="col-12 col-lg-3 text-center text-lg-start px-0">
+								<i class="fa-solid fa-chart-simple"></i>
+							</div>
+							<div class="col-5 px-0 d-none d-lg-block">
+								Stats
+							</div>
+						</div>
+						<div class="row justify-content-center mx-0 my_hover">
+							<div
+								class="col-12 col-lg-3 text-center text-lg-start px-0">
+								<i class="fa-solid fa-signal"></i>
+							</div>
+							<div class="col-5 px-0 d-none d-lg-block">
+								Signal
+							</div>
+						</div>
+					</div>
+					<div class="footer-sidebar mt-auto">
+						<div
+							class="row justify-content-center mx-0 my-2 my_hover">
+							<div
+								class="col-12 col-lg-3 text-center text-lg-start px-0">
+								<i class="fa-solid fa-gear"></i>
+							</div>
+							<div class="col-5 px-0 d-none d-lg-block">
+								Admin
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="main-content">
+				<!-- HEADER MAIN CONTENT  -->
+				<div class="container-fluid bg-primary py-3">
+					<div class="row text-white">
+						<div class="col-12 col-md-4 col-lg-6 mb-2 mb-md-0">
+							<h3 class="d-inline-block my-0 me-2">Boolean</h3>
+							<span
+								class="badge rounded-pill bg-info align-middle fw-light my_fs_small"
+								>Piano Blaze</span
+							><br />
+							<span
+								class="badge rounded-pill bg-info align-middle fw-light my_fs_small"
+								>3 App</span
+							>
+							<i class="fa-solid fa-angles-right my_fs_small"></i>
+							<span
+								class="badge rounded-pill bg-info align-middle fw-light my_fs_small d-none d-lg-inline"
+								>Boolean mobile App</span
+							>
+							<span
+								class="badge rounded-pill bg-info align-middle fw-light my_fs_small d-none d-lg-inline"
+								>Boolean web App</span
+							>
+							<span
+								class="badge rounded-pill bg-info align-middle fw-light my_fs_small d-none d-lg-inline"
+								>Boolean blog App</span
+							>
+							<span
+								class="badge rounded-pill bg-info align-middle fw-light d-inline d-lg-none"
+								>+</span
+							>
+						</div>
+						<div class="col-12 col-md-4 col-lg-3">
+							<span class="my_fs_small"
+								>Studenti online negli ultimi 30 minuti</span
+							>
+							<h3 class="mt-2 my-0 my_fs_small">125</h3>
+						</div>
+						<div
+							class="col-12 col-md-3 col-lg-3 text-start text-md-end order-first order-md-0 mb-2 mb-md-0">
+							<span class="me-2 my_fs_small">Nuovo studente</span>
+							<!-- OFFCANVAS  -->
+							<span class="my_icon_square my_fs_small"
+								><i
+									class="fa-solid fa-plus"
+									data-bs-toggle="offcanvas"
+									data-bs-target="#offcanvasRight"
+									aria-controls="offcanvasRight"></i
+							></span>
+							<div
+								class="offcanvas offcanvas-end text-start px-2"
+								tabindex="-1"
+								id="offcanvasRight"
+								aria-labelledby="offcanvasRightLabel">
+								<div class="offcanvas-header">
+									<h5
+										class="offcanvas-title"
+										id="offcanvasRightLabel">
+										Inserisci nuovo studente
+									</h5>
+									<button
+										type="button"
+										class="btn-close"
+										data-bs-dismiss="offcanvas"
+										aria-label="Close"></button>
+								</div>
+								<div class="offcanvas-body">
+									<form>
+										<div
+											class="d-flex flex-wrap flex-md-nowrap gap-2 mb-2">
+											<div class="col-12 col-md-6">
+												<label
+													for="Name"
+													class="form-label"
+													>Nome</label
+												>
+												<input
+													type="text"
+													class="form-control"
+													id="Name" />
+											</div>
+											<div class="col-12 col-md-6">
+												<label
+													for="Surname"
+													class="form-label"
+													>Cognome</label
+												>
+												<input
+													type="text"
+													class="form-control"
+													id="Surname" />
+											</div>
+										</div>
+										<div
+											class="d-flex flex-wrap flex-md-nowrap gap-2 mb-2">
+											<div class="col-12 col-md-6">
+												<label
+													for="Email"
+													class="form-label"
+													>Email</label
+												>
+												<div class="input-group">
+													<span
+														class="input-group-text"
+														id="basic-addon1"
+														>@</span
+													>
+													<input
+														type="email"
+														id="Email"
+														class="form-control"
+														aria-describedby="basic-addon1" />
+												</div>
+											</div>
+											<div class="col-12 col-md-6">
+												<label
+													for="Password"
+													class="form-label"
+													>Password</label
+												>
+												<input
+													type="password"
+													class="form-control"
+													id="Password" />
+											</div>
+										</div>
+										<div
+											class="d-flex flex-wrap flex-md-nowrap gap-2 mb-2">
+											<div class="col-12 col-md-6">
+												<label
+													for="Email"
+													class="form-label"
+													>Inserisci Email</label
+												>
+												<div class="input-group">
+													<span
+														class="input-group-text"
+														id="basic-addon1"
+														>@</span
+													>
+													<input
+														type="email"
+														id="Email"
+														class="form-control"
+														aria-describedby="basic-addon1" />
+												</div>
+											</div>
+											<div
+												class="col-12 col-md-6 gap-2 mb-2">
+												<label
+													for="Password"
+													class="form-label"
+													>Password</label
+												>
+												<input
+													type="password"
+													class="form-control"
+													id="Password" />
+											</div>
+										</div>
+										<div class="mb-2">
+											<label
+												for="Address"
+												class="form-label"
+												>Inserisci indirizzo</label
+											>
+											<input
+												type="text"
+												class="form-control"
+												id="Address" />
+										</div>
+										<div
+											class="d-flex flex-wrap flex-md-nowrap gap-2 mb-2 pe-2">
+											<div class="col-12 col-md-6">
+												<label
+													for="City"
+													class="form-label"
+													>Città</label
+												>
+												<input
+													type="text"
+													class="form-control"
+													id="City" />
+											</div>
+											<div class="col-12 col-md-4">
+												<label
+													for="select"
+													class="form-label"
+													>Stato</label
+												>
+												<select
+													class="form-select"
+													id="select"
+													aria-label="Select">
+													<option selected>
+														Scegli...
+													</option>
+													<option value="1">
+														Italia
+													</option>
+													<option value="2">
+														Stati Uniti
+													</option>
+													<option value="3">
+														Russia
+													</option>
+												</select>
+											</div>
+											<div class="col-12 col-md-2">
+												<label
+													for="cap"
+													class="form-label"
+													>Cap</label
+												>
+												<input
+													type="text"
+													class="form-control"
+													id="cap" />
+											</div>
+										</div>
+										<div class="mb-2">
+											<label
+												for="formFile"
+												class="form-label"
+												>Foto</label
+											>
+											<input
+												class="form-control"
+												type="file"
+												id="formFile" />
+										</div>
+										<div class="mb-2">
+											<input
+												class="form-check-input me-1"
+												type="checkbox"
+												value=""
+												id="firstCheckbox" />
+											<label
+												class="form-check-label"
+												for="firstCheckbox"
+												>Seleziona per proseguire</label
+											>
+										</div>
+										<div>
+											<button
+												type="button"
+												class="btn btn-primary">
+												Salva
+											</button>
+											<button
+												type="button"
+												class="btn btn-warning">
+												Svuota
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- CARD CONTENT  -->
+				<div id="box-card" class="px-1 py-2">
+					<div class="row gx-0">
+						<div class="col-12 col-lg-8">
+							<div class="d-flex flex-column">
+								<div class="card mb-2">
+									<div class="card-header">
+										Prossime classi
+									</div>
+									<!-- TABLE  -->
+									<table
+										class="table table-hover my_fs_small">
+										<thead>
+											<tr>
+												<th>Nome</th>
+												<th
+													class="text-center d-none d-md-table-cell">
+													Data inizio
+												</th>
+												<th
+													class="text-center d-none d-md-table-cell">
+													ROI
+												</th>
+												<th class="text-center">
+													Stato
+												</th>
+												<th class="text-center">
+													Azioni
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="td_wide">
+													<img
+														src="./img/class-avatar.jpg"
+														class="my_avatar" />
+													Classe 75
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													15 Febbraio 2024
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													20%
+												</td>
+												<td class="text-center">
+													<span
+														class="badge text-bg-success align-middle fw-light"
+														>Done</span
+													>
+												</td>
+												<td class="text-center">
+													<i
+														class="fa-solid fa-pen me-1 my_icon_square_tb"></i
+													><i
+														class="fa-solid fa-trash my_icon_square_tb"></i>
+												</td>
+											</tr>
+											<tr>
+												<td class="td_wide">
+													<img
+														src="./img/class-avatar.jpg"
+														class="my_avatar" />
+													Classe 75
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													15 Febbraio 2024
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													20%
+												</td>
+												<td class="text-center">
+													<span
+														class="badge text-bg-success align-middle fw-light"
+														>Done</span
+													>
+												</td>
+												<td class="text-center">
+													<i
+														class="fa-solid fa-pen me-1 my_icon_square_tb"></i
+													><i
+														class="fa-solid fa-trash my_icon_square_tb"></i>
+												</td>
+											</tr>
+											<tr>
+												<td class="td_wide">
+													<img
+														src="./img/class-avatar.jpg"
+														class="my_avatar" />
+													Classe 75
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													15 Febbraio 2024
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													20%
+												</td>
+												<td class="text-center">
+													<span
+														class="badge bg-warning align-middle fw-light"
+														>Process</span
+													>
+												</td>
+												<td class="text-center">
+													<i
+														class="fa-solid fa-pen me-1 my_icon_square_tb"></i
+													><i
+														class="fa-solid fa-trash my_icon_square_tb"></i>
+												</td>
+											</tr>
+											<tr>
+												<td class="td_wide">
+													<img
+														src="./img/class-avatar.jpg"
+														class="my_avatar" />
+													Classe 75
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													15 Febbraio 2024
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													20%
+												</td>
+												<td class="text-center">
+													<span
+														class="badge text-bg-danger align-middle fw-light"
+														>Failed</span
+													>
+												</td>
+												<td class="text-center">
+													<i
+														class="fa-solid fa-pen me-1 my_icon_square_tb"></i
+													><i
+														class="fa-solid fa-trash my_icon_square_tb"></i>
+												</td>
+											</tr>
+											<tr>
+												<td class="td_wide">
+													<img
+														src="./img/class-avatar.jpg"
+														class="my_avatar" />
+													Classe 75
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													15 Febbraio 2024
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													20%
+												</td>
+												<td class="text-center">
+													<span
+														class="badge text-bg-success align-middle fw-light"
+														>Done</span
+													>
+												</td>
+												<td class="text-center">
+													<i
+														class="fa-solid fa-pen me-1 my_icon_square_tb"></i
+													><i
+														class="fa-solid fa-trash my_icon_square_tb"></i>
+												</td>
+											</tr>
+											<tr>
+												<td class="td_wide">
+													<img
+														src="./img/class-avatar.jpg"
+														class="my_avatar" />
+													Classe 75
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													15 Febbraio 2024
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													20%
+												</td>
+												<td class="text-center">
+													<span
+														class="badge text-bg-danger align-middle fw-light"
+														>Failed</span
+													>
+												</td>
+												<td class="text-center">
+													<i
+														class="fa-solid fa-pen me-1 my_icon_square_tb"></i
+													><i
+														class="fa-solid fa-trash my_icon_square_tb"></i>
+												</td>
+											</tr>
+											<tr>
+												<td class="td_wide">
+													<img
+														src="./img/class-avatar.jpg"
+														class="my_avatar" />
+													Classe 75
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													15 Febbraio 2024
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													20%
+												</td>
+												<td class="text-center">
+													<span
+														class="badge text-bg-success align-middle fw-light"
+														>Done</span
+													>
+												</td>
+												<td class="text-center">
+													<i
+														class="fa-solid fa-pen me-1 my_icon_square_tb"></i
+													><i
+														class="fa-solid fa-trash my_icon_square_tb"></i>
+												</td>
+											</tr>
+											<tr>
+												<td class="td_wide">
+													<img
+														src="./img/class-avatar.jpg"
+														class="my_avatar" />
+													Classe 75
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													15 Febbraio 2024
+												</td>
+												<td
+													class="text-center d-none d-md-table-cell">
+													20%
+												</td>
+												<td class="text-center">
+													<span
+														class="badge bg-warning align-middle fw-light"
+														>Process</span
+													>
+												</td>
+												<td class="text-center">
+													<i
+														class="fa-solid fa-pen me-1 my_icon_square_tb"></i
+													><i
+														class="fa-solid fa-trash my_icon_square_tb"></i>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- FAQ  -->
+								<div class="card mb-2">
+									<div class="card-header">F.A.Q.</div>
+									<div
+										class="accordion accordion-flush"
+										id="accordionFlushExample">
+										<div class="accordion-item my_fs_small">
+											<h2 class="accordion-header">
+												<button
+													class="accordion-button collapsed my_fs_small"
+													type="button"
+													data-bs-toggle="collapse"
+													data-bs-target="#flush-collapseOne"
+													aria-expanded="false"
+													aria-controls="flush-collapseOne">
+													Come aggiungere un nuovo
+													studente?
+												</button>
+											</h2>
+											<div
+												id="flush-collapseOne"
+												class="accordion-collapse collapse"
+												data-bs-parent="#accordionFlushExample">
+												<div class="accordion-body">
+													Placeholder content for this
+													accordion, which is intended
+													to demonstrate the
+													<code
+														>.accordion-flush</code
+													>
+													class. This is the first
+													item's accordion body.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item my_fs_small">
+											<h2 class="accordion-header">
+												<button
+													class="accordion-button collapsed my_fs_small"
+													type="button"
+													data-bs-toggle="collapse"
+													data-bs-target="#flush-collapseTwo"
+													aria-expanded="false"
+													aria-controls="flush-collapseTwo">
+													Come posso accedere alle
+													informazioni del mio
+													account?
+												</button>
+											</h2>
+											<div
+												id="flush-collapseTwo"
+												class="accordion-collapse collapse"
+												data-bs-parent="#accordionFlushExample">
+												<div class="accordion-body">
+													Placeholder content for this
+													accordion, which is intended
+													to demonstrate the
+													<code
+														>.accordion-flush</code
+													>
+													class. This is the second
+													item's accordion body. Let's
+													imagine this being filled
+													with some actual content.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item my_fs_small">
+											<h2 class="accordion-header">
+												<button
+													class="accordion-button collapsed my_fs_small"
+													type="button"
+													data-bs-toggle="collapse"
+													data-bs-target="#flush-collapseThree"
+													aria-expanded="false"
+													aria-controls="flush-collapseThree">
+													Posso usare questa Dashboard
+													da mobile?
+												</button>
+											</h2>
+											<div
+												id="flush-collapseThree"
+												class="accordion-collapse collapse"
+												data-bs-parent="#accordionFlushExample">
+												<div class="accordion-body">
+													Placeholder content for this
+													accordion, which is intended
+													to demonstrate the
+													<code
+														>.accordion-flush</code
+													>
+													class. This is the third
+													item's accordion body.
+													Nothing more exciting
+													happening here in terms of
+													content, but just filling up
+													the space to make it look,
+													at least at first glance, a
+													bit more representative of
+													how this would look in a
+													real-world application.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-4">
+							<div class="d-flex flex-column ps-lg-2">
+								<!-- TODO SECTION  -->
+								<div class="card mb-2">
+									<div class="card-header">Todo</div>
+									<ul class="list-group my_fs_small">
+										<li class="list-group-item">
+											<input
+												class="form-check-input me-1"
+												type="checkbox"
+												value=""
+												id="firstCheckbox" />
+											<label
+												class="form-check-label"
+												for="firstCheckbox"
+												>First checkbox</label
+											>
+										</li>
+										<li class="list-group-item">
+											<input
+												class="form-check-input me-1"
+												type="checkbox"
+												value=""
+												id="secondCheckbox" />
+											<label
+												class="form-check-label"
+												for="secondCheckbox"
+												>Second checkbox</label
+											>
+										</li>
+										<li class="list-group-item">
+											<input
+												class="form-check-input me-1"
+												type="checkbox"
+												value=""
+												id="thirdCheckbox" />
+											<label
+												class="form-check-label"
+												for="thirdCheckbox"
+												>Third checkbox</label
+											>
+										</li>
+									</ul>
+								</div>
+								<!-- STATS  -->
+								<div class="card p-2">
+									<div class="card">
+										<img
+											src="./img/stats.jpeg"
+											class="card-img-top" />
+										<div class="card-body">
+											<ul
+												class="list-group list-group-flush my_fs_small">
+												<li class="list-group-item">
+													<h5>Utenti attivi</h5>
+													Lista degli utenti attivi in
+													piattaforma nell'ultimo mese
+												</li>
+												<li class="list-group-item">
+													Gennaio: 1200
+												</li>
+												<li class="list-group-item">
+													Febbraio: 1000
+												</li>
+												<li class="list-group-item">
+													Marzo: 1300
+												</li>
+												<li class="list-group-item">
+													<a
+														href="#"
+														class="card-link"
+														>Visualizza report
+														dettagliato</a
+													>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
 </html>
